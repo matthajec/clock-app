@@ -1,8 +1,7 @@
 .quote {
-
   &_content {
     display: inline-block;
-    width: 400px;
+    width: 30vw;
   }
 
   &_new-btn {
@@ -11,18 +10,13 @@
     border: none;
     cursor: pointer;
     outline: none;
-
-    &:active {
-      animation: spin360 linear;
-    }
+    font-size: .8em;
+    padding-top: 3px;
+    margin-left: 10px;
   }
-}
 
-@keyframes spin360 {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(360deg);
+  &_author {
+    margin-top: 10px;
+    font-weight: bold;
   }
 }

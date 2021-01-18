@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clock</title>
-  <script src="https://kit.fontawesome.com/e49896e7f6.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/e49896e7f6.js" defer crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
@@ -13,21 +13,30 @@
 
 <body>
   <main>
-    <section class="main-clock">
-      <div class="container">
+    <section class="clock-container">
+      <div class="container clock-container_inner">
         <div class="quote">
           <p class="quote_content"></p>
-          <button class="quote_new-btn">
+          <button class="quote_new-btn" aria-label="new quote">
             <i class="fas fa-sync-alt"></i>
           </button>
           <p class="quote_author"></p>
         </div>
+
+        <div class="container_sb">
+          <div class="clock">
+            <p class="clock_greeting"></p>
+            <p class="clock_time"></p>
+            <p class="clock_timezone"></p>
+          </div>
+        </div>
+
       </div>
     </section>
-    <aside class="more-info">
-      <section class="">
-
-      </section>
+    <aside class="more-info-container">
+      <div class="container">
+        hi, how are you doing today??
+      </div>
     </aside>
   </main>
 

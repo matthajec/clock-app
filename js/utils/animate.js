@@ -17,14 +17,16 @@ export default (options) => {
       condition // executes on every change passing an object with keys 'elapsed' being the amount of time in ms the animation has been running for, and 'value' being the current value of the css property
     } = options;
 
+    // if the property is transform prepare a before and after string for the transform property chosen
     if (property === 'transform') {
       before = `${transform}(`;
       after = `${units})`;
     } else {
       before = '';
-      after = units ? units : '';
+      after = units;
     }
 
+    // calculate the step size(amount to change each ms) based on whether the the value increases or decreases during the animation
     if (startValue - endValue < 0) {
       stepSize = (endValue - startValue) / duration;
       operation = 'min';
@@ -39,13 +41,15 @@ export default (options) => {
 
       const elapsed = timestamp - startTime;
 
-      // calculate the angle
+      // calculate the angle using the elapsed time since the animation started
       const value = Math[operation](operation === 'min' ? stepSize * elapsed : stepSize * (duration - elapsed), endValue);
 
+      // set the value for the selected property for every element that was passed in
       elements.forEach(element => {
         element.style[property] = before + value + after;
       });
 
+      // if the user chose to pass a condition (a function which gets a snapshot of the animation status) then run it
       if (condition) condition({
         value: value,
         elapsed: elapsed
@@ -60,6 +64,7 @@ export default (options) => {
       }
     }
 
+    // trigger the start of the animation
     window.requestAnimationFrame(step);
   });
 };

@@ -1,8 +1,26 @@
-@import 'vars','quote';
+@import 'vars','quote','clock-container','clock','more-info-container','more-info-btn';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: $primaryColor;
+}
+
+body {
   font-family: $fontStack;
+  font-size: 1.3em;
+  overflow: hidden;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.container_sb {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }

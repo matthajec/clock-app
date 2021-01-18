@@ -1,6 +1,6 @@
 .quote_content {
   display: inline-block;
-  width: 400px;
+  width: 30vw;
 }
 
 .quote_new-btn {
@@ -9,33 +9,87 @@
   border: none;
   cursor: pointer;
   outline: none;
+  font-size: .8em;
+  padding-top: 3px;
+  margin-left: 10px;
 }
 
-.quote_new-btn:active {
-  -webkit-animation: spin360 linear;
-          animation: spin360 linear;
+.quote_author {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-@-webkit-keyframes spin360 {
-  0%, 100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  50% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+.clock-container {
+  height: 100vh;
+  padding: 70px;
+}
+
+@media (max-width: 1920px) {
+  .clock-container {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/bg-hd.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
-@keyframes spin360 {
-  0%, 100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+@media (max-width: 2560px) and (min-width: 1921px) {
+  .clock-container {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/bg-quad-hd.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg-quad-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
-  50% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+}
+
+@media (min-width: 2560px) {
+  .clock-container {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/bg-ultra-hd.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg-ultra-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
+}
+
+.clock-container_inner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.clock {
+  display: inline-block;
+}
+
+.clock_greeting {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  width: 100%;
+}
+
+.clock_time {
+  display: inline-block;
+  font-size: 13.75em;
+  font-weight: bold;
+  line-height: 1.05em;
+  letter-spacing: .02em;
+}
+
+.clock_timezone {
+  display: inline-block;
+  font-size: 2em;
 }
 
 * {
@@ -43,6 +97,28 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  color: #f0f0f0;
+}
+
+body {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  overflow: hidden;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.container_sb {
+  width: 80vw;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=main.css.map */

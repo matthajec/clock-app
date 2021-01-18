@@ -1,0 +1,38 @@
+.clock-container {
+  height: 100vh;
+  padding: 70px;
+
+  @media(max-width: 1920px) {
+    & {
+      background: linear-gradient(rgba(0 ,0, 0, .5), rgba(0, 0, 0, .5)), url('../images/bg-hd.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  @media(max-width: 2560px) and (min-width: 1921px) {
+    & {
+      background: linear-gradient(rgba(0 ,0, 0, .5), rgba(0, 0, 0, .5)), url('../images/bg-quad-hd.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;    
+    }
+  }
+
+  @media(min-width: 2560px) {
+    & {
+  background: linear-gradient(rgba(0 ,0, 0, .5), rgba(0, 0, 0, .5)), url('../images/bg-ultra-hd.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;    
+    }
+  }
+
+  &_inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

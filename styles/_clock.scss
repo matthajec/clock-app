@@ -1,0 +1,22 @@
+.clock {
+  display: inline-block;
+  &_greeting {
+    font-size: 1.25em;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    width: 100%;
+  }
+
+  &_time {
+    display: inline-block;
+    font-size: 13.75em;
+    font-weight: bold;
+    line-height: 1.05em;
+    letter-spacing: .02em;
+  }
+
+  &_timezone {
+    display: inline-block;
+    font-size: 2em;
+  }
+}

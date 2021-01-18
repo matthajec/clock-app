@@ -15,9 +15,9 @@ export default () => {
     .then(() => {
       return getRandomQuote();
     })
-    .then(quote => {
-      el('.quote_content').textContent = quote.text;
-      el('.quote_author').textContent = quote.author;
+    .then(({ text, author }) => {
+      el('.quote_content').textContent = `"${text}"`;
+      el('.quote_author').textContent = author ? author : 'Author Unknown';
       return animate({
         elements: [el('.quote_content'), el('.quote_author')],
         duration: 250,

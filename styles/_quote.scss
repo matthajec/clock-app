@@ -1,0 +1,28 @@
+.quote {
+
+  &_content {
+    display: inline-block;
+    width: 400px;
+  }
+
+  &_new-btn {
+    vertical-align: top;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    &:active {
+      animation: spin360 linear;
+    }
+  }
+}
+
+@keyframes spin360 {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}

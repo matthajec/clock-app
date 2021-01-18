@@ -1,0 +1,48 @@
+.quote_content {
+  display: inline-block;
+  width: 400px;
+}
+
+.quote_new-btn {
+  vertical-align: top;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.quote_new-btn:active {
+  -webkit-animation: spin360 linear;
+          animation: spin360 linear;
+}
+
+@-webkit-keyframes spin360 {
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin360 {
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,64 @@
+.info-toggle {
+  align-self: flex-end;
+  position: relative;
+  background-color: $primaryColor;
+  height: 60px;
+  width: 160px;
+  border-radius: 999px;
+  margin-bottom: 30px;
+
+  &_input {
+    opacity: 0;
+
+    &:checked ~ .info-toggle_label .info-toggle_label_circleBtn {
+      transform: rotate(0deg);
+    }
+
+    &:checked ~ .info-toggle_label::before {
+      content: 'less';
+      letter-spacing: .25em;
+      left: 25px;
+    }
+  }
+
+  &_label {
+    color: $secondaryColor;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+
+    &:before {
+      content: 'more';
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: $secondaryColor;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 25px;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    &_circleBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      height: 44px;
+      width: 44px;
+      background-color: $secondaryColor;
+      border-radius: 50%;
+      top: 8px;
+      right: 8px;
+      transform: rotate(180deg);
+      transition: all .3s linear;
+    
+      &_icon {
+        height: 10px;
+      }
+    }
+  }
+}

@@ -21,6 +21,14 @@ el('.quote_new-btn').addEventListener('click', () => {
   setQuote();
 });
 
+el('.info-toggle_input').addEventListener('change', (e) => {
+  if (e.target.checked) {
+    el('main').classList.add('open');
+  } else {
+    el('main').classList.remove('open');
+  }
+});
+
 const changeQuoteInterval = setInterval(() => {
   setQuote();
 }, 180000);

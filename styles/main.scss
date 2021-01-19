@@ -1,4 +1,4 @@
-@import 'vars','quote','clock-container','clock','more-info-container','more-info-btn';
+@import 'vars','quote','clock-container','clock','info-container','info-toggle';
 
 * {
   margin: 0;
@@ -11,6 +11,15 @@ body {
   font-family: $fontStack;
   font-size: 1.3em;
   overflow: hidden;
+  position: relative;
+}
+
+main {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  transition: all .3s linear;
 }
 
 .container {

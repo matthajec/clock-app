@@ -12,11 +12,39 @@ body {
   font-size: 1.3em;
   overflow: hidden;
   position: relative;
+  height: 100vh;
+
+
+  @media (max-width: 1921px) {
+    & {
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(../images/bg-hd.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media (min-width: 1921px) and (max-width: 2561px)  {
+    & {
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(../images/bg-quad-hd.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media (min-width: 2561px) {
+    & {
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(../images/bg-ultra-hd.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
 }
+
+
 
 main {
   position: absolute;
-  top: -100%;
+  top: 0;
   left: 0;
   right: 0;
   transition: all .3s linear;

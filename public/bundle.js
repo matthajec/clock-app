@@ -115,21 +115,26 @@
       });
   };
 
-  // check is leap year
+  // check if leap year
   Date.prototype.isLeapYear = function () {
-    var year = this.getFullYear(); // get the full year from Date
-    if ((year & 3) != 0) return false; // return false if date is divisible by 4
+    var year = this.getFullYear();
+    if ((year & 3) != 0) return false; // return false if date is not divisible by 4 (making it a leap year)
     return ((year % 100) != 0 || (year % 400) == 0); // if the year is divisible by 100 but not by 400 the leap year is skipped
   };
 
   // Get Day of Year
   Date.prototype.getDOY = function () {
-    var dayCount = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+    var dayCount = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]; // offset for each month (index 0 is added to the day during january, 11 is december)
     var mn = this.getMonth();
     var dn = this.getDate();
-    var dayOfYear = dayCount[mn] + dn;
-    if (mn > 1 && this.isLeapYear()) dayOfYear++;
+    var dayOfYear = dayCount[mn] + dn; // take the day number in the current month and add it it to the total number of days from the previous months
+    if (mn > 1 && this.isLeapYear()) dayOfYear++; // account for jan 29 on leap years
     return dayOfYear;
+  };
+
+  Date.prototype.getWeek = function () {
+    var startDOTW = new Date(this.getFullYear(), 0, 1).getDay(); // get the index of the day of the week on jan 1st of this year
+    return Math.ceil((this.getDOY() + startDOTW) / 7);
   };
 
   var now = () => {
@@ -157,7 +162,7 @@
       timeOfDay: timeOfDay(),
       dayOfTheWeek: date.getDay() + 1,
       dayOfTheYear: date.getDOY(),
-      weekOfTheYear: Math.ceil(date.getDOY() / 7)
+      weekOfTheYear: date.getWeek()
     };
   };
 
@@ -183,6 +188,7 @@
     el('.info-group_content[data-type="doty"]').textContent = dayOfTheYear;
     el('.info-group_content[data-type="woty"]').textContent = weekOfTheYear;
 
+    if (timeOfDay === 'evening') el('body').classList.add('night');
   };
 
   setQuote();
@@ -204,9 +210,9 @@
 
   el('.info-toggle_input').addEventListener('change', (e) => {
     if (e.target.checked) {
-      el('main').classList.add('open');
+      el('body').classList.add('open');
     } else {
-      el('main').classList.remove('open');
+      el('body').classList.remove('open');
     }
   });
 

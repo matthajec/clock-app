@@ -23,4 +23,5 @@ export default () => {
   el('.info-group_content[data-type="doty"]').textContent = dayOfTheYear;
   el('.info-group_content[data-type="woty"]').textContent = weekOfTheYear;
 
+  if (timeOfDay === 'evening') el('body').classList.add('night');
 };

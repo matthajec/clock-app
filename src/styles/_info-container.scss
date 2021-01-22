@@ -1,5 +1,5 @@
 .info-container {
-  background: rgba(206, 206, 206, 0.9);
+  background: rgba($primaryColor, .9);
   height: 400px;
   width: 100vw;
   padding: 50px;
@@ -46,5 +46,16 @@
   &_content {
     font-size: 1.8em;
     font-weight: bold;
+  }
+}
+
+body.night {
+  .info-container {
+    color: $primaryColor;
+    background: darken(rgba($secondaryColor, .8), 10);
+
+    .container::after {
+      background-color: $primaryColor;
+    }
   }
 }

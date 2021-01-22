@@ -1,7 +1,8 @@
+// check is leap year
 Date.prototype.isLeapYear = function () {
-  var year = this.getFullYear();
-  if ((year & 3) != 0) return false;
-  return ((year % 100) != 0 || (year % 400) == 0);
+  var year = this.getFullYear(); // get the full year from Date
+  if ((year & 3) != 0) return false; // return false if date is divisible by 4
+  return ((year % 100) != 0 || (year % 400) == 0); // if the year is divisible by 100 but not by 400 the leap year is skipped
 };
 
 // Get Day of Year

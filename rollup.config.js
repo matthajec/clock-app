@@ -1,8 +1,8 @@
 export default {
-  input: 'js/app.js',
+  input: 'src/js/app.js',
   output: {
-    file: 'bundle.js',
+    file: 'public/bundle.js',
     format: 'iife',
-    sourcemap: true
+    sourcemap: true,
   },
-}
+};

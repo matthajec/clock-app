@@ -66,6 +66,60 @@
   font-size: 2em;
 }
 
+.info-container {
+  background: rgba(206, 206, 206, 0.9);
+  height: 400px;
+  width: 100vw;
+  padding: 50px;
+  color: #292929;
+}
+
+.info-container * {
+  color: inherit;
+}
+
+.info-container .container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.info-container .container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  background-color: #292929;
+  opacity: .3;
+}
+
+.info-group:nth-child(2n) {
+  margin-left: 90px;
+}
+
+.info-group_title {
+  text-transform: uppercase;
+  font-size: .7em;
+  letter-spacing: .2em;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.info-group_content {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
 .info-toggle {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -93,7 +147,8 @@
 }
 
 .info-toggle_label {
-  color: #3b3b3b;
+  cursor: pointer;
+  color: #292929;
   top: 0;
   bottom: 0;
   left: 0;
@@ -105,7 +160,7 @@
   content: 'more';
   letter-spacing: .05em;
   text-transform: uppercase;
-  color: #3b3b3b;
+  color: #292929;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -128,14 +183,14 @@
   position: absolute;
   height: 44px;
   width: 44px;
-  background-color: #3b3b3b;
+  background-color: #292929;
   border-radius: 50%;
   top: 8px;
   right: 8px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
+  -webkit-transition: all .55s ease-out;
+  transition: all .55s ease-out;
 }
 
 .info-toggle_label_circleBtn_icon {
@@ -160,8 +215,8 @@ body {
 
 @media (max-width: 1921px) {
   body {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(../images/bg-hd.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/bg-hd.jpg);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(images/bg-hd.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/bg-hd.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -169,8 +224,8 @@ body {
 
 @media (min-width: 1921px) and (max-width: 2561px) {
   body {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(../images/bg-quad-hd.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/bg-quad-hd.jpg);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(images/bg-quad-hd.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/bg-quad-hd.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -178,8 +233,8 @@ body {
 
 @media (min-width: 2561px) {
   body {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(../images/bg-ultra-hd.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/bg-ultra-hd.jpg);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(images/bg-ultra-hd.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/bg-ultra-hd.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -188,10 +243,12 @@ body {
 main {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  -webkit-transition: all .3s linear;
-  transition: all .3s linear;
+  -webkit-transition: all .55s ease-out;
+  transition: all .55s ease-out;
+}
+
+main.open {
+  top: -400px;
 }
 
 .container {

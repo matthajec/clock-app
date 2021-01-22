@@ -8,7 +8,8 @@
   <script src="https://kit.fontawesome.com/e49896e7f6.js" defer crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="styles/main.css" rel="stylesheet">
+  <link href="images/clock-clipart.png" rel="icon">
+  <link href="main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -42,12 +43,24 @@
 
       </div>
     </section>
-    <aside class="more-info-container">
+    <aside class="info-container">
       <div class="container">
-        hi, how are you doing today??
-        <i class="fas fa-sort-up info-toggle_label_circleBtn_icon"></i>
-
-        <i class="fas fa-sort-up info-toggle_label_circleBtn_icon"></i>
+        <div class="info-group">
+          <p class="info-group_title">current timezone</p>
+          <p data-type="timezone" class="info-group_content">Europe/London</p>
+        </div>
+        <div class="info-group">
+          <p class="info-group_title">day of the week</p>
+          <p data-type="dotw" class="info-group_content">Europe/London</p>
+        </div>
+        <div class="info-group">
+          <p class="info-group_title">day of the year</p>
+          <p data-type="doty" class="info-group_content">Europe/London</p>
+        </div>
+        <div class="info-group">
+          <p class="info-group_title">week number</p>
+          <p data-type="woty" class="info-group_content">Europe/London</p>
+        </div>
 
       </div>
     </aside>

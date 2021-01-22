@@ -22,6 +22,7 @@
   }
 
   &_label {
+    cursor: pointer;
     color: $secondaryColor;
     top: 0;
     bottom: 0;
@@ -54,7 +55,7 @@
       top: 8px;
       right: 8px;
       transform: rotate(180deg);
-      transition: all .3s linear;
+      transition: all .55s ease-out;
     
       &_icon {
         height: 10px;

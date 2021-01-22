@@ -36,3 +36,4 @@ const changeQuoteInterval = setInterval(() => {
 const setTimeInterval = setInterval(() => {
   setTime();
 }, 1000);
+

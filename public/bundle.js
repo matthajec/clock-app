@@ -115,10 +115,11 @@
       });
   };
 
+  // check is leap year
   Date.prototype.isLeapYear = function () {
-    var year = this.getFullYear();
-    if ((year & 3) != 0) return false;
-    return ((year % 100) != 0 || (year % 400) == 0);
+    var year = this.getFullYear(); // get the full year from Date
+    if ((year & 3) != 0) return false; // return false if date is divisible by 4
+    return ((year % 100) != 0 || (year % 400) == 0); // if the year is divisible by 100 but not by 400 the leap year is skipped
   };
 
   // Get Day of Year
@@ -177,6 +178,11 @@
     el('.clock_greeting').innerHTML = `<i class="fas fa-${timeOfDay === 'evening' ? 'moon' : 'sun'}"></i> Good ${timeOfDay}, it's currently`;
     el('.clock_time').textContent = `${hour > 12 ? hour - 12 : hour}:${paddedMinuteStr}`;
     el('.clock_timezone').textContent = timezone.abv;
+    el('.info-group_content[data-type="timezone"]').textContent = timezone.name.split('_').join(' '); // destroy underscores and create spaces
+    el('.info-group_content[data-type="dotw"]').textContent = dayOfTheWeek;
+    el('.info-group_content[data-type="doty"]').textContent = dayOfTheYear;
+    el('.info-group_content[data-type="woty"]').textContent = weekOfTheYear;
+
   };
 
   setQuote();

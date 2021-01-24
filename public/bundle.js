@@ -143,11 +143,13 @@
     const hour = date.getHours();
     const timeOfDay = () => {
       switch (true) {
+        case hour < 5:
+          return 'night';
         case hour < 11:
           return 'morning';
         case hour < 18:
           return 'afternoon';
-        case hour < 24:
+        default:
           return 'evening';
       }
     };
@@ -188,7 +190,7 @@
     el('.info-group_content[data-type="doty"]').textContent = dayOfTheYear;
     el('.info-group_content[data-type="woty"]').textContent = weekOfTheYear;
 
-    if (timeOfDay === 'evening') el('body').classList.add('night');
+    if (timeOfDay === 'evening' || timeOfDay === 'night') el('body').classList.add('night');
   };
 
   setQuote();

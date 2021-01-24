@@ -34,13 +34,16 @@ export default () => {
   const hour = date.getHours();
   const timeOfDay = () => {
     switch (true) {
+      case hour < 5:
+        return 'night';
+        break;
       case hour < 11:
         return 'morning';
         break;
       case hour < 18:
         return 'afternoon';
         break;
-      case hour < 24:
+      default:
         return 'evening';
         break;
     }

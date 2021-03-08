@@ -41,7 +41,10 @@ body {
 
   &.open {
     main {
-      top: -500px;
+      top: -400px;
+      @media(max-width: 900px) {
+        top: -500px;
+      }
     }
   }
 

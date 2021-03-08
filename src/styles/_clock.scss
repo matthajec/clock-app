@@ -1,10 +1,22 @@
 .clock {
   display: inline-block;
+
   &_greeting {
     font-size: 1.25em;
     text-transform: uppercase;
     letter-spacing: .18em;
-    width: 100%;
+
+    @media(max-width: 1200px) {
+      & {
+        font-size: 1.1em;
+      }
+    }
+
+    @media(max-width: 780px) {
+      & {
+        font-size: 1em;
+      }
+    }
   }
 
   &_time {
@@ -13,10 +25,46 @@
     font-weight: bold;
     line-height: 1.05em;
     letter-spacing: .02em;
+
+    @media(max-width: 1200px) {
+      & {
+        font-size: 11.75em
+      }
+    }
+
+    @media(max-width: 1030px) {
+      & {
+        font-size: 11em
+      }
+    }
+
+    @media(max-width: 780px) {
+      & {
+        font-size: 9em
+      }
+    }
+
+    @media(max-width: 600px) {
+      & {
+        font-size: 8em
+      }
+    }
+
+    @media(max-width: 500px) {
+      & {
+        font-size: 6em
+      }
+    }
   }
 
   &_timezone {
     display: inline-block;
     font-size: 2em;
+
+    @media(max-width: 630px) {
+      & {
+        display: none;
+      }
+    }
   }
 }

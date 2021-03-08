@@ -3,6 +3,18 @@
   &_content {
     display: inline-block;
     width: 30vw;
+
+    @media(max-width: 1075px) {
+      & {
+        width: 50vw;
+      }
+    }
+
+    @media(max-width: 950px) {
+      & {
+        width: 75vw;
+      }
+    }
   }
 
   &_new-btn {

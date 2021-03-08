@@ -6,6 +6,13 @@
   width: 160px;
   border-radius: 999px;
   margin-bottom: 30px;
+  margin-top: 10px;
+
+  @media (max-width: 980px) {
+    & {
+      align-self: flex-start;
+    }    
+  }
 
   &_input {
     opacity: 0;

@@ -41,7 +41,7 @@ body {
 
   &.open {
     main {
-      top: -400px;
+      top: -500px;
     }
   }
 
@@ -83,11 +83,38 @@ main {
 .container {
   width: 80vw;
   margin: 0 auto;
+
+  @media (max-width: 1100px) {
+    & {
+      width: 85vw;
+    }
+  }
+
+  @media (max-width: 730px) {
+    & {
+      width: 90vw;
+    }
+  }
 }
 
 .container_sb {
-  width: 80vw;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 980px) {
+    & {
+      flex-direction: column;
+    }    
+  }
+}
+
+.small-vp-br {
+  display: none;
+  @media (max-width: 560px) {
+    & {
+      display: inline-block;
+    }    
+  }
 }
